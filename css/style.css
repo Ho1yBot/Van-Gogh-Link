@@ -216,7 +216,7 @@ li {
     line-height: 150%;
     transition: 0.2s;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .top-banner__button:hover {
@@ -261,7 +261,7 @@ li {
     justify-content: space-between;
 }
 
-.services__plate button{
+.services__plate button {
     position: relative;
     z-index: 1;
 }
@@ -378,7 +378,7 @@ li {
     line-height: 140%;
     gap: 20px;
     transition: 0.2s;
-    
+
 }
 
 .fixed-block button:hover {
@@ -548,6 +548,29 @@ li {
         justify-content: center;
         align-items: center;
         gap: 8px;
+    }
+
+    @media (max-width:420px) {
+        .top-banner__title {
+            font-size: 32px;
+        }
+
+        .services__plate img {
+            max-width: 100%;
+        }
+
+        .plate__title {
+            font-size: 23px;
+            margin-top: 10px;
+        }
+
+        .plate__subtitle {
+            margin-top: 6px;
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width:375px) {
     }
 
 }
