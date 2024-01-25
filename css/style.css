@@ -35,17 +35,21 @@ li {
     /* outline: 2px solid red; */
 }
 
+.top-banner-wrp, .services, .header-wrp {
+    padding: 0px 15px;
+}
+
 /* HEADER START */
 .header-wrp {
     display: flex;
     justify-content: space-between;
-    padding: 11px 0px 10px;
+    padding: 11px 15px 10px;
     align-items: center;
     position: relative;
 }
 
 .header__main-logo {
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
 .header__nav {
@@ -70,10 +74,10 @@ li {
     transition: 0.2s;
 }
 
-.header__link:hover, .profit-link a:hover,
+/* .header__link:hover, .profit-link a:hover,
 .info-link a:hover {
     border-bottom-width: 2px;
-}
+} */
 
 .header__tel {
     text-align: right;
@@ -96,20 +100,39 @@ li {
 
 .profit-list, .info-list {
     background-color: white;
-    padding: 16px 36px 10px 28px;
+    padding: 24px 38px 20px 28px;
 }
 
 .profit-link, .info-link {
-    margin-bottom: 10px;
-    margin-top: 10px;
     position: relative;
 }
 
-.profit-link::after, .info-link::after {
-    content: "";
+.profit-link:first-child, .info-link:first-child {
+    margin-top: 25px;
+}
+
+.profit-link:first-child::after,
+.info-link:first-child::after {
     position: absolute;
-    display: block;
-    bottom: -10px;
+    content: "";
+    top: -25px;
+    left: 0px;
+    height: 1px;
+    width: 100%;
+    background: #E7E7E7;
+    margin-bottom: 10px;
+}
+
+.profit-link:not(:first-child),
+.info-link:not(:first-child) {
+    margin-top: 20px;
+}
+
+.profit-link:not(:first-child)::before,
+.info-link:not(:first-child)::before {
+    position: absolute;
+    content: "";
+    top: -10px;
     height: 1px;
     width: 100%;
     background: #E7E7E7;
@@ -160,6 +183,7 @@ li {
 .header__account {
     background-color: inherit;
     border: none;
+    margin-right: 10px;
 }
 
 /* HEADER END */
@@ -235,6 +259,7 @@ li {
 /* TOP BANNER END */
 
 /* SERVICES START */
+
 .services__title {
     margin-top: 24px;
     color: #000;
@@ -247,8 +272,10 @@ li {
 
 .services__wrp {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 60px;
     margin-top: 40px;
 }
 
@@ -319,8 +346,21 @@ li {
     line-height: 130.5%;
 }
 
-.plate__price-txt span, .plate__price-txt--special span {
-    text-decoration-line: underline;
+.plate__price-txt span,
+.plate__price-txt--special span {
+    position: relative;
+}
+
+.plate__price-txt span::after,
+.plate__price-txt--special span::after {
+    /* text-decoration-line: underline; */
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 18px;
+    left: 0px;
+    background-color: black;
 }
 
 .plate__btn {
@@ -392,6 +432,8 @@ li {
 
 /* FIXED BLOCK END */
 
+
+
 @media (max-width:1300px) {
     .header__list-links {
         gap: 2px;
@@ -433,9 +475,7 @@ li {
         display: flex;
     }
 
-    .services__plate {
-        margin-bottom: 20px;
-    }
+    .services__plate {}
 
 
 }
@@ -443,6 +483,10 @@ li {
 @media (max-width: 768px) {
     header, .services {
         margin: 0px 40px;
+    }
+
+    .top-banner-wrp, .services, .header-wrp {
+        padding: 0px 0px;
     }
 
     .top-banner__content {
@@ -471,11 +515,13 @@ li {
 
     .services__wrp {
         margin-top: 32px;
+        row-gap: 20px;
+        column-gap: 0px;
+        justify-content: space-between;
     }
 
     .services__plate {
         max-width: 334px;
-        margin-bottom: 20px;
     }
 
     .services__plate img {
@@ -503,6 +549,12 @@ li {
         width: 100%;
         font-size: 18px;
         font-weight: 700;
+    }
+}
+
+@media (max-width: 748px) {
+    .services__wrp {
+        justify-content: center;
     }
 }
 
@@ -534,6 +586,10 @@ li {
 
     .plate__title {
         font-size: 28px;
+    }
+
+    .services__wrp {
+        row-gap: 30px;
     }
 
     .paymentButton {
@@ -570,7 +626,6 @@ li {
         }
     }
 
-    @media (max-width:375px) {
-    }
+    @media (max-width:375px) {}
 
 }
